@@ -1,21 +1,12 @@
-# theme.toml template for a Hugo theme
-# See https://github.com/gohugoio/hugoThemes#themetoml for an example
-
-name = "Themes"
+name = "Parametric"
 license = "MIT"
-licenselink = "https://github.com/yourname/yourtheme/blob/master/LICENSE"
-description = ""
-homepage = "http://example.com/"
-tags = []
+licenselink = "https://github.com/wamuir/parametric/blob/master/LICENSE"
+description = "Parametric is a minimal and clean personal theme for Hugo."
+homepage = "https://wamuir.github.io/parametric/"
+tags = ["academic", "cv", "personal", "portfolio", "resume"]
 features = []
 min_version = "0.41.0"
 
 [author]
-  name = ""
-  homepage = ""
-
-# If porting an existing theme
-[original]
-  name = ""
-  homepage = ""
-  repo = ""
+  name = "William Muir"
+  homepage = "https://wamuir.github.io"
