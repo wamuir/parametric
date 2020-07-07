@@ -1,0 +1,75 @@
+/* SCROLLBARS */
+ html {
+     overflow-y: auto;
+}
+/* FONTS */
+ body {
+     font-family: "Montserrat",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+ h1, h2, h3, h4, h5, h6, p.subtitle {
+     font-family: "Roboto",BlinkMacSystemFont,-apple-system,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+ code {
+     color: #363636;
+}
+ .content h1, .content h2, .content h3, .content h4, .content h5, .content h6 {
+     font-weight: 400;
+}
+ .content h6 {
+     font-size: 1.05em;
+}
+ .mono {
+     font-family: 'Fira Code', monospace;
+     font-weight: 400;
+}
+/* HEADER */
+ .profile-image {
+     border-radius: 5%;
+     filter: grayscale(100%);
+}
+ .is-192x192 {
+     width:192px;
+     height:192px;
+}
+/* FOOTER */
+ body {
+     display: flex;
+     min-height: 100vh;
+     height: 100%;
+     flex-direction: column;
+}
+ #content {
+     flex: 1 0 auto;
+}
+ .github-corner:hover .octo-arm{
+     animation: octocat-wave 560ms ease-in-out;
+}
+ @keyframes octocat-wave{
+     0%, 100% {
+         transform: rotate(0);
+    }
+     20%, 60% {
+         transform: rotate(-25deg);
+    }
+     40%, 80% {
+         transform: rotate(10deg);
+    }
+}
+ @media (max-width:500px) {
+     .github-corner:hover .octo-arm{
+         animation:none;
+    }
+     .github-corner .octo-arm{
+         animation: octocat-wave 560ms ease-in-out;
+    }
+}
+/* TAGS */
+ .tag-lg {
+     min-width: 125px;
+}
+ .tag-md {
+     min-width: 100px;
+}
+ .tag-sm {
+     min-width: 75px;
+}
