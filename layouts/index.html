@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    {{ partial "head.html" . }}
+
+    <body>
+
+    {{ partial "header.html" . }}
+
+        <div id="content" class="px-5">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-10-tablet is-8-widescreen is-7-fullhd">
+
+                        <div class="content">
+
+                        {{ .Content }}
+
+                        {{ with .Site.Params.Interests }}
+                            <p>
+                                <span>
+                                    <span class="is-inline-block has-text-weight-medium mr-1">Interests: </span>
+                                    <span>{{ delimit . ", " }}</span>
+                                </span>
+                            </p>
+                        {{ end }}
+
+                        </div>
+
+                    {{ with ((where .Site.RegularPages "Type" "projects").ByParam "Date").Reverse }}
+                        <div class="content">
+                        <h6>Current Projects</h6>
+                            <ul>
+
+                            {{ range first 10 . }}
+                                {{ partial "project.html" . }}
+                            {{ end }}
+
+                            {{ if gt (len .) 10 }}
+                                <li>
+                                    <a href="/projects">See previous projects...</a>
+                                </li>
+                            {{ end }}
+                            </ul>
+                       </div>
+                    {{ end }}
+
+                    {{ with ((where .Site.RegularPages "Type" "works").ByParam "Date").Reverse }}
+                        <div class="content">
+                            <h6>Recent Publications</h6>
+                            <ul>
+
+                            {{ range first 10 . }}
+                                {{ partial "work.html" . }}
+                            {{ end }}
+
+                            {{ if gt (len .) 10 }}
+                                <li>
+                                    <a href="/works">See previous publications...</a>
+                                </li>
+                            {{ end }}
+                            </ul>
+                        </div>
+                    {{ end }}
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {{- partial "footer.html" . }}
+
+        </body>
+
+</html>

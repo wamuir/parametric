@@ -1,0 +1,18 @@
+<li>
+    <div class="is-block">
+        <span class="has-text-weight-medium">{{ .Title | markdownify }}</span>
+        <span>{{ .Description | markdownify }}</span>
+    </div>
+    <div class="field is-grouped is-grouped-multiline mt-1 mb-2">
+    {{ range .Params.Links }}
+        <div class="control">
+            <div class="tags has-addons">
+                <span class="tag is-link is-light" style="border-right: 1.5px solid #3273dc;">
+                    <i class="{{ .icon }} fa-lg"></i>
+                </span>
+                <a class="tag tag-lg is-link is-light" href="{{ .href }}" target="_blank" rel="noopener">{{ .text }}</a>
+            </div>
+        </div>
+    {{ end }}
+    </div>
+</li>

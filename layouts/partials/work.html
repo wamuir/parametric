@@ -1,0 +1,23 @@
+<li>
+    <div class="is-block">
+        <span>{{ .Params.Authors }} </span>
+        <span>({{ .Params.Year }}). </span>
+        <span class="has-text-weight-medium">{{ .Title }}. </span>
+    {{ if .Params.Volume }}
+        <span><span class="is-italic">{{ .Params.Journal }}</span>, <span class="is-italic">{{ .Params.Volume }}</span>{{ with .Params.Number }}({{.}}){{ end }}, {{ .Params.Pages }}. </span>
+    {{ else }}
+        <span><span class="is-italic">{{ .Params.Journal }}</span>.</span>
+    {{ end }}
+   </div>
+   <div class="is-block tags mt-1 mb-2">
+        <span class="tag tag-sm is-link is-light">
+            <a href="https://dx.doi.org/{{ .Params.Doi }}" target="_blank" rel="noopener">eprint</a>
+        </span>
+        <span class="tag tag-sm is-link is-light">
+            <a href="https://api.crossref.org/v1/works/{{ .Params.Doi }}" target="_blank" rel="noopener">xref</a>
+        </span>
+        <span class="tag tag-sm is-link is-light">
+            <a href="/works/{{ lower .Params.Doi }}/cite.bib" target="_blank" rel="noopener">bibtex</a>
+        </span>
+    </div>
+</li>

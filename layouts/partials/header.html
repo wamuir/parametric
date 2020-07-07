@@ -1,0 +1,45 @@
+    <header class="px-5 py-5">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-10-tablet is-8-widescreen is-7-fullhd">
+                    <div class="columns is-vcentered">
+                        <div class="column is-narrow">
+                            <div>
+                                <figure class="image is-192x192">
+                                    <img src="{{ .Site.Params.Photo | absURL }}" class="profile-image" alt="Profile Picture">
+                                </figure>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <h1 class="title has-text-weight-light is-clipped">{{ .Site.Params.Name }}</h1>
+                            <p class="subtitle has-text-weight-light pt-1">
+                                <small class="is-block is-clipped">{{ .Site.Params.Position }}</small>
+                                <small class="is-block is-clipped">{{ .Site.Params.Institution }}</small>
+                                <small class="is-block is-clipped">{{ .Site.Params.Location }}</small>
+                                <span  class="is-block is-size-6 pt-2">
+                                    <span class="mono is-clipped">{{ ( urls.Parse .Site.BaseURL ).Host }}</span>
+                                </span>
+                                <span class="is-size-6 pt-3 is-block">
+                                {{ range .Site.Params.Social }}
+                                    <span class="icon">
+                                        <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .title }}">
+                                            <i class="{{ .icon }}"></i>
+                                        </a>
+                                    </span>
+                                {{ end }}
+                                {{ with .Site.Params.Email }}
+                                    <span class="px-1">|</span>
+                                    <span class="icon">
+                                        <a href="mailto:{{ . }}" title="E-mail">
+                                            <i class="far fa-paper-plane"></i>
+                                        </a>
+                                    </span>
+                                {{ end }}
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </header>
