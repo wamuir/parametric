@@ -24,12 +24,13 @@
 }
 /* HEADER */
  .profile-image {
-     border-radius: 5%;
      filter: grayscale(100%);
 }
  .is-192x192 {
      width:192px;
      height:192px;
+     overflow:hidden;
+     border-radius: 5%;
 }
 /* FOOTER */
  body {
