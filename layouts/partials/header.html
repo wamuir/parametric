@@ -22,7 +22,7 @@
                                 <span class="is-size-6 pt-3 is-block">
                                 {{ range .Site.Params.Social }}
                                     <span class="icon">
-                                        <a href="{{ .link }}" target="_blank" rel="noopener" title="{{ .title }}">
+                                        <a href="{{ .link | absURL }}" target="_blank" rel="noopener" title="{{ .title }}">
                                             <i class="{{ .icon }}"></i>
                                         </a>
                                     </span>
