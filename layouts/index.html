@@ -27,36 +27,36 @@
 
                         </div>
 
-                    {{ with ((where .Site.RegularPages "Type" "projects").ByParam "Date").Reverse }}
                         <div class="content">
-                        <h6>Current Projects</h6>
+                            <h4>Open Source</h4>
+
                             <ul>
 
-                            {{ range first 10 . }}
-                                {{ partial "project.html" . }}
+                            {{ with ((where .Site.RegularPages "Type" "projects").ByParam "Date").Reverse }}
+                                {{ range . }}
+                                    {{ partial "project.html" . }}
+                                {{ end }}
                             {{ end }}
 
-                            {{ if gt (len .) 10 }}
                                 <li>
-                                    <a href="/projects">See previous projects...</a>
+                                    <a href="{{ .Site.Params.github }}" style="font-style:italic;" target="_blink">See more open source projects on Github...</a>
                                 </li>
-                            {{ end }}
                             </ul>
                        </div>
-                    {{ end }}
 
                     {{ with ((where .Site.RegularPages "Type" "works").ByParam "Date").Reverse }}
                         <div class="content">
-                            <h6>Recent Publications</h6>
+                            <h4>Research Publications</h4>
+
                             <ul>
 
-                            {{ range first 10 . }}
+                            {{ range first 8 . }}
                                 {{ partial "work.html" . }}
                             {{ end }}
 
-                            {{ if gt (len .) 10 }}
+                            {{ if gt (len .) 8 }}
                                 <li>
-                                    <a href="/works">See previous publications...</a>
+                                    <a href="works" style="font-style:italic;">See more publications...</a>
                                 </li>
                             {{ end }}
                             </ul>
