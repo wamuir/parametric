@@ -1,4 +1,4 @@
-{{ if and $.Site.Params.gtag (not .Site.IsServer) }}
+{{ if and $.Site.Params.gtag (not hugo.IsServer) }}
         <script async src="https://www.googletagmanager.com/gtag/js?id={{ $.Site.Params.gtag }}"></script>
         <script>
           window.dataLayer = window.dataLayer || [];
